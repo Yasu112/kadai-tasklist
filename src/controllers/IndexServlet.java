@@ -53,8 +53,8 @@ public class IndexServlet extends HttpServlet {
 
         em.close();
 
-        request.setAttribute("messages", tasks);
-        request.setAttribute("messages_count", tasks_count);     // 全件数
+        request.setAttribute("tasks", tasks);
+        request.setAttribute("tasks_count", tasks_count);     // 全件数
         request.setAttribute("page", page);
 
         // フラッシュメッセージがセッションスコープにセットされていたら
@@ -66,6 +66,8 @@ public class IndexServlet extends HttpServlet {
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/messages/index.jsp");
         rd.forward(request, response);
+
+
 
     }
 
